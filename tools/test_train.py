@@ -11,7 +11,7 @@ import torch
 import torch.backends.cudnn as cudnn
 
 import sys
-sys.path.append(r'/home/liang/yolox_distill')
+sys.path.append(r'/home/XX/YOLOX_distill')
 
 from yolox.core import Trainer, launch
 from yolox.exp import get_exp
@@ -40,7 +40,7 @@ def make_parser():
     parser.add_argument(
         "-f",
         "--exp_file",
-        default="/home/zhangjian/YOLOX/exps/example/yolox_voc/yolox_voc_s_1.py",
+        default="/home/XX/YOLOX_distill/exps/example/yolox_voc/yolox_voc_s_1.py",
         type=str,
         help="plz input your expriment description file",
     )

@@ -5,7 +5,7 @@ from loguru import logger
 import cv2
 import torch
 import sys
-sys.path.append(r'/home/liang/YOLOX')
+sys.path.append(r'/home/XX/YOLOX')
 from yolox.data.data_augment import ValTransform
 from yolox.data.datasets import COCO_CLASSES,VOC_CLASSES
 from yolox.exp import get_exp
@@ -20,7 +20,7 @@ def make_parser():
     parser.add_argument("-n", "--name", type=str, default='yolox-s', help="model name")
 
     parser.add_argument(
-        "--path", default="./assets/439779036.jpg", help="path to images or video"
+        "--path", default="./assets/1.jpg", help="path to images or video"
     )
     parser.add_argument("--camid", type=int, default=0, help="webcam demo camera id")
     parser.add_argument(

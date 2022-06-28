@@ -11,7 +11,7 @@ import torch
 import torch.backends.cudnn as cudnn
 
 import sys
-sys.path.append(r'/home/zhangjian/yolox_distill_v2')
+sys.path.append(r'/home/XX/YOLOX_distill')
 
 from yolox.core import Trainer, launch
 from yolox.exp import get_exp
@@ -20,7 +20,7 @@ from yolox.utils import configure_nccl, configure_omp, get_num_devices
 
 def make_parser():
     parser = argparse.ArgumentParser("YOLOX train parser")
-    parser.add_argument("-expn", "--experiment-name", type=str, default='20220615/T_yoloxm_s')
+    parser.add_argument("-expn", "--experiment-name", type=str, default='2022xx/T_yoloxm_s')
     parser.add_argument("-n", "--name", type=str, default=None, help="model name")
 
     # distributed
@@ -35,22 +35,22 @@ def make_parser():
     )
     parser.add_argument("-b", "--batch-size", type=int, default=32, help="batch size")
     parser.add_argument(
-        "-d", "--devices", default=0, type=int, help="device for training"
+        "-d", "--devices", default=2, type=int, help="device for training"
     )
     parser.add_argument(
         "-f",
         "--exp_file",
-        default="/home/zhangjian/yolox_distill_v2/exps/example/yolox_voc/yolox_voc_s_1.py",
+        default="/home/XX/YOLOX_distill/exps/example/yolox_voc/yolox_voc_s_student.py",
         type=str,
         help="plz input your expriment description file",
     )
     parser.add_argument(
         "--teacher_exp_file",
-        default="/home/zhangjian/yolox_distill_v2/exps/example/yolox_voc/yolox_voc_s_2.py",
+        default="/home/XX/YOLOX_distill/exps/example/yolox_voc/yolox_voc_m_teacher.py",
         type=str,
         help="load Teacher model",
     )
-    parser.add_argument("--T_model_file",default="/home/zhangjian/YOLOX/tools/YOLOX_outputs/20220530/mode1_640_datav2/best_ckpt.pth",type=str,help="teacher model weiths file")
+    parser.add_argument("--T_model_file",default="/home/xx/YOLOX_distill/tools/YOLOX_outputs/Teacher/best_ckpt.pth",type=str,help="teacher model weiths file")
     parser.add_argument("--test",default="hello",type=str,help="test parser")
     parser.add_argument(
         "--resume", default=False, action="store_true", help="resume training"

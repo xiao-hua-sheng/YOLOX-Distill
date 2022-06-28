@@ -33,7 +33,7 @@ def make_parser():
     parser.add_argument("-n", "--name", type=str, default='yolox-s', help="model name")
 
     parser.add_argument(
-        "--path", default="../family", help="path to images or video"
+        "--path", default="../imgs", help="path to images or video"
     )
     parser.add_argument("--camid", type=int, default=0, help="webcam demo camera id")
     parser.add_argument(
@@ -47,7 +47,7 @@ def make_parser():
     parser.add_argument(
         "-f",
         "--exp_file",
-        default="/home/zhangjian/yolox_distill_v2/exps/example/yolox_voc/yolox_voc_s_1.py",
+        default="/home/XX/YOLOX_distill/exps/example/yolox_voc/yolox_voc_s_1.py",
         type=str,
         help="pls input your expriment description file",
     )
@@ -252,10 +252,10 @@ def image_demo(predictor, vis_folder, path, current_time, save_result):
         outputs, img_info = predictor.inference(image_name)
         result_image = predictor.visual(outputs[0], img_info, predictor.confthre)
         #生成xml文件
-        xl = os.listdir('./')
-        if 'xml' not in xl:
-            os.mkdir('xml')
-        predictor.creatxml(image_name,outputs[0], img_info)
+        # xl = os.listdir('./')
+        # if 'xml' not in xl:
+        #     os.mkdir('xml')
+        #predictor.creatxml(image_name,outputs[0], img_info)
         if save_result:
             save_folder = os.path.join(
                 vis_folder, time.strftime("%Y_%m_%d_%H_%M_%S", current_time)

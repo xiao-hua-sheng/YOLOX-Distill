@@ -9,7 +9,7 @@ from loguru import logger
 import torch
 from torch import nn
 import sys
-sys.path.append(r'/home/zhangjian/yolox_distill_v2')
+sys.path.append(r'/home/XX/YOLOX_distill')
 from yolox.exp import get_exp
 from yolox.models.network_blocks import SiLU
 from yolox.utils import replace_module
@@ -37,13 +37,13 @@ def make_parser():
     parser.add_argument(
         "-f",
         "--exp_file",
-        default="/home/zhangjian/yolox_distill_v2/exps/example/yolox_voc/yolox_voc_s_1.py",
+        default="/home/XX/YOLOX_distill/exps/example/yolox_voc/yolox_voc_s_1.py",
         type=str,
         help="expriment description file",
     )
     parser.add_argument("-expn", "--experiment-name", type=str, default=None)
     parser.add_argument("-n", "--name", type=str, default=None, help="model name")
-    parser.add_argument("-c", "--ckpt", default="/home/zhangjian/yolox_distill_v2/tools/YOLOX_outputs/20220606/T_yoloxm_s/best_ckpt.pth", type=str, help="ckpt path")
+    parser.add_argument("-c", "--ckpt", default="/home/XX/YOLOX_distill/tools/YOLOX_outputs/20220606/T_yoloxm_s/best_ckpt.pth", type=str, help="ckpt path")
     parser.add_argument(
         "opts",
         help="Modify config options using the command-line",

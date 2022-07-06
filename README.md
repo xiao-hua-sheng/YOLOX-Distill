@@ -1,4 +1,9 @@
-1、train.py文件增加--teacher_exp_file和--T_model_file   用于加载教师模型使用，注意修改为自己路径
+一、教师模型训练
+  教师模型的训练使用官方版本即可，一般选择m或者l的模型。
+二、学生模型训练
+1、train.py文件增加--teacher_exp_file和--T_model_file   
+  teacher_exp_file用于加载教师模型相关参数，可以直接修改exps/example/*-teacher.py,主要注意num_classes、depth、width、input_size；
+  T_model_file 教师模型路径，第一步中训练的教师模型的绝对路径（或者复制到本工程下的相对路径）。
 
 2、教师模型的加载在trainer.py 131行左右实现
 
